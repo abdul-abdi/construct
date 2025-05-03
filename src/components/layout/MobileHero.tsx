@@ -12,15 +12,44 @@ const heroContent = [
   { headline: "Smart Investments. Timeless Architecture.", subheading: "Whether you're buying, building, or designing — we offer holistic solutions for profitable and visionary development." }
 ];
 
+// Stats for the company achievements
+const companyStats = [
+  { value: "50+", label: "Projects" },
+  { value: "12", label: "Awards" },
+  { value: "8", label: "Countries" }
+];
+
+// Featured projects for the highlights section
+const featuredHighlights = [
+  { title: "Luxury Residential", description: "Contemporary living spaces" },
+  { title: "Commercial Towers", description: "Iconic office buildings" },
+  { title: "Urban Planning", description: "City development" }
+];
+
+// Architecture quotes
+const architectureQuotes = [
+  { quote: "Architecture is the learned game, correct and magnificent, of forms assembled in the light.", author: "Le Corbusier" },
+  { quote: "Architecture should speak of its time and place, but yearn for timelessness.", author: "Frank Gehry" },
+  { quote: "Space is the breath of art.", author: "Frank Lloyd Wright" }
+];
+
 const MobileHero = () => {
   const [contentIndex, setContentIndex] = useState(0);
+  const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const contentInterval = setInterval(() => {
       setContentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
     }, 7000); // Change text every 7 seconds
+    
+    const quoteInterval = setInterval(() => {
+      setQuoteIndex((prevIndex) => (prevIndex + 1) % architectureQuotes.length);
+    }, 10000); // Change quote every 10 seconds
 
-    return () => clearInterval(intervalId);
+    return () => {
+      clearInterval(contentInterval);
+      clearInterval(quoteInterval);
+    };
   }, []);
 
   return (
@@ -35,12 +64,12 @@ const MobileHero = () => {
       
       {/* Content Container - simplified for mobile */}
       <div className="container mx-auto px-4 z-20 relative flex-grow flex flex-col justify-center">
-        <div className="max-w-sm mx-auto text-center mt-12 mb-8 animate-fade-in-up">
+        <div className="max-w-sm mx-auto text-center mt-8 mb-6 animate-fade-in-up">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
-            className="mb-6 flex justify-center"
+            className="mb-5 flex justify-center"
           >
             <span className="inline-block py-1 px-3 border-t border-b border-primary/50 text-xs text-primary tracking-[0.2em] bg-background/80 backdrop-blur-sm">
               PRECISION IN ARCHITECTURE
@@ -83,7 +112,7 @@ const MobileHero = () => {
               </AnimatePresence>
             </div>
             
-            <div className="flex flex-col gap-3 mt-6">
+            <div className="flex flex-col gap-3 mt-4">
               <a href="#projects" className="w-full">
                 <motion.button
                   className="bg-primary text-primary-foreground hover:bg-primary/90 px-5 py-3 text-sm tracking-wider w-full rounded-sm"
@@ -117,6 +146,104 @@ const MobileHero = () => {
             </div>
           </motion.div>
         </div>
+        
+        {/* Company Stats */}
+        <motion.div 
+          className="mt-6 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto">
+            {companyStats.map((stat, index) => (
+              <motion.div
+                key={`stat-${index}`}
+                className="flex flex-col items-center p-2 bg-background/40 border border-primary/20 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+              >
+                <span className="text-xl font-bold text-primary">{stat.value}</span>
+                <span className="text-xs text-foreground/70">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Architecture Quote */}
+        <motion.div 
+          className="relative mb-8 max-w-sm mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="relative py-4 px-5 bg-background/30 border-l-2 border-primary/50">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`quote-${quoteIndex}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="pl-1"
+              >
+                <p className="text-xs italic text-foreground/80 mb-1">&ldquo;{architectureQuotes[quoteIndex].quote}&rdquo;</p>
+                <p className="text-right text-[10px] text-primary/80">— {architectureQuotes[quoteIndex].author}</p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+        
+        {/* Featured Project Highlights */}
+        <motion.div 
+          className="mt-4 mb-6 max-w-sm mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <h3 className="text-xs uppercase tracking-wider text-foreground/60 mb-3 text-center">Featured Expertise</h3>
+          <div className="grid grid-cols-3 gap-2">
+            {featuredHighlights.map((item, index) => (
+              <motion.div
+                key={`highlight-${index}`}
+                className="flex flex-col items-center p-2 text-center"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+              >
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    {index === 0 ? (
+                      // House icon for residential
+                      <>
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </>
+                    ) : index === 1 ? (
+                      // Building icon for commercial
+                      <>
+                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12" y2="18"></line>
+                        <line x1="8" y1="6" x2="16" y2="6"></line>
+                        <line x1="8" y1="10" x2="16" y2="10"></line>
+                        <line x1="8" y1="14" x2="16" y2="14"></line>
+                      </>
+                    ) : (
+                      // Map icon for urban planning
+                      <>
+                        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                        <line x1="8" y1="2" x2="8" y2="18"></line>
+                        <line x1="16" y1="6" x2="16" y2="22"></line>
+                      </>
+                    )}
+                  </svg>
+                </div>
+                <span className="text-xs font-medium">{item.title}</span>
+                <span className="text-[10px] text-foreground/60">{item.description}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Mobile-friendly blueprint decoration */}
