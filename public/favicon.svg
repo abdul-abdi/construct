@@ -1,0 +1,16 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border -->
+  <rect x="0.5" y="0.5" width="35" height="35" stroke="#3B82F6" stroke-opacity="0.9" stroke-width="1"/>
+  <!-- Inner background -->
+  <rect x="1" y="1" width="34" height="34" fill="#3B82F6" fill-opacity="0.1"/>
+  <!-- Central square -->
+  <rect x="8" y="8" width="20" height="20" fill="#3B82F6" fill-opacity="0.9"/>
+  <!-- Letter C -->
+  <text x="18" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  <!-- Top-left corner detail -->
+  <path d="M0.5 8.5 H8.5 V0.5" stroke="#3B82F6" stroke-opacity="0.9" stroke-width="1"/>
+  <!-- Bottom-right corner detail -->
+  <path d="M35.5 27.5 H27.5 V35.5" stroke="#3B82F6" stroke-opacity="0.9" stroke-width="1"/>
+  <!-- Note: Colors (#3B82F6 for primary, white for foreground) are placeholders. -->
+  <!-- Adjust them to match your project's theme variables if needed. -->
+</svg> 
