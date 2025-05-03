@@ -74,7 +74,7 @@ const Hero = () => {
   return (
     <motion.section
       ref={targetRef}
-      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-12"
+      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-4 md:pt-12"
       style={{ opacity: mainOpacity, scale: mainScale, y: mainY }}
     >
       {/* Blueprint Background */}
@@ -84,7 +84,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-30 relative flex flex-col items-center">
         {/* Central Blueprint - The Centerpiece */}
         <motion.div 
-          className="absolute z-10 w-[130%] max-w-[1300px] aspect-[1.5] pointer-events-none"
+          className="absolute z-10 w-[130%] max-w-[1300px] aspect-[1.5] pointer-events-none hidden md:block"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
@@ -234,7 +234,7 @@ const Hero = () => {
             
             {/* Dynamic measuring lines */}
             <motion.div 
-              className="absolute left-0 top-0 h-full border-l-2 border-primary/50 z-20"
+              className="absolute left-0 top-0 h-full border-l-2 border-primary/50 z-20 hidden md:block"
               style={{ left: useTransform(smoothMouseX, [0, windowSize.width || 1], ["5%", "10%"]) }}
             >
               {[0, 20, 40, 60, 80, 100].map(value => (
@@ -246,7 +246,7 @@ const Hero = () => {
             </motion.div>
             
             <motion.div 
-              className="absolute bottom-0 left-0 w-full border-b-2 border-primary/50 z-20"
+              className="absolute bottom-0 left-0 w-full border-b-2 border-primary/50 z-20 hidden md:block"
               style={{ bottom: useTransform(smoothMouseY, [0, windowSize.height || 1], ["5%", "10%"]) }}
             >
               {[0, 20, 40, 60, 80, 100].map(value => (
@@ -260,14 +260,14 @@ const Hero = () => {
         </motion.div>
 
         {/* Content Container */}
-        <div className="max-w-4xl mx-auto text-center z-20 relative mt-16 mb-40">
+        <div className="max-w-4xl mx-auto text-center z-20 relative mt-8 md:mt-16 mb-24 md:mb-40 animate-fade-in-up md:animate-none">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             className="mb-6 flex justify-center"
           >
-            <span className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary tracking-[0.2em] mb-4 bg-background/80 backdrop-blur-sm">
+            <span className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary tracking-[0.2em] mb-1 md:mb-4 bg-background/80 backdrop-blur-sm">
               PRECISION IN ARCHITECTURE
             </span>
           </motion.div>
@@ -278,11 +278,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeInOut' }}
           >
-            <div className="relative h-32 md:h-40 lg:h-52 mb-6">
+            <div className="relative min-h-32 md:min-h-40 lg:min-h-52 mb-2 md:mb-3 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={contentIndex + '-h1'}
-                  className="absolute inset-0 text-4xl md:text-5xl lg:text-7xl font-normal tracking-tight text-foreground flex items-center justify-center"
+                  className="w-full text-3xl leading-tight tracking-normal sm:text-4xl sm:tracking-tight md:text-5xl lg:text-7xl font-normal text-foreground"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
@@ -293,11 +293,11 @@ const Hero = () => {
               </AnimatePresence>
             </div>
             
-            <div className="relative h-24 md:h-28 mb-8">
+            <div className="relative min-h-24 md:min-h-28 mb-6 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.p
                   key={contentIndex + '-p'}
-                  className="absolute inset-0 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto flex items-center justify-center"
+                  className="w-full text-base leading-relaxed sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -308,10 +308,10 @@ const Hero = () => {
               </AnimatePresence>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <a href="#projects">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center sm:items-stretch gap-4 mt-6">
+              <a href="#projects" className="w-full sm:w-auto">
                 <motion.button
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm tracking-wider"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm tracking-wider w-full sm:w-auto"
                   whileHover={{ boxShadow: '0 0 15px rgba(28, 100, 242, 0.4)' }}
                   whileTap={{ scale: 0.98 }}
                   onClick={(e) => {
@@ -323,9 +323,9 @@ const Hero = () => {
                   EXPLORE OUR PROJECTS
                 </motion.button>
               </a>
-              <a href="#process">
+              <a href="#process" className="w-full sm:w-auto">
                 <motion.button
-                  className="border-2 border-primary text-primary font-medium px-6 py-3 text-sm tracking-wider hover:bg-primary/20 hover:text-primary-foreground dark:hover:bg-primary/40 dark:hover:text-primary-foreground transition-colors duration-300"
+                  className="border-2 border-primary text-primary font-medium px-6 py-3 text-sm tracking-wider hover:bg-primary/20 hover:text-primary-foreground dark:hover:bg-primary/40 dark:hover:text-primary-foreground transition-colors duration-300 w-full sm:w-auto"
                   whileHover={{ 
                     boxShadow: '0 0 15px rgba(var(--blueprint-line-color), 0.4)',
                     scale: 1.02 
