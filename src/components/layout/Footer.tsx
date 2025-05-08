@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {footerLinks.map((column, columnIndex) => (
+          {footerLinks.filter(col => col.title !== 'Resources').map((column, columnIndex) => (
             <motion.div 
               key={column.title}
               initial={{ opacity: 0, y: 20 }}
@@ -169,6 +169,43 @@ const Footer: React.FC = () => {
               </ul>
             </motion.div>
           ))}
+
+          {/* Manually render Resources column */}
+          {(footerLinks.find(col => col.title === 'Resources')) && (
+            <motion.div
+              key="Resources"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * (footerLinks.filter(col => col.title !== 'Resources').length + 1) }}
+              viewport={{ once: true }}
+            >
+              <h3 className="font-semibold text-lg mb-4 text-shadow-sm">Resources</h3>
+              <ul className="space-y-2">
+                {footerLinks.find(col => col.title === 'Resources')?.links.map((link) => (
+                  <motion.li
+                    key={link.label}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <a 
+                      href={link.href} 
+                      className="text-foreground/70 hover:text-primary transition-colors relative group"
+                      onClick={(e) => {
+                        if (link.action) {
+                          e.preventDefault();
+                          link.action();
+                        }
+                      }}
+                      download={link.download || undefined}
+                    >
+                      {link.label}
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-primary/60 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
         </div>
         
         <motion.div
