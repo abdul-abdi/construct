@@ -40,23 +40,30 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    
-    // Simulate form submission
+
+    const { name, email, phone, projectType, message } = formData;
+    const recipientEmail = 'Silverpackgroupltd@gmail.com';
+    const subject = `New Project Inquiry from ${name || 'Website Contact Form'}`;
+    const emailBody = `Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Project Type: ${projectType}
+Message:
+${message}
+    `;
+
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody.trim())}`;
+    window.location.href = mailtoLink;
+
+    // Set success state and reset after a delay
+    // Consider if form data should be cleared or preserved after mailto redirect
     setTimeout(() => {
       setFormState('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        projectType: '',
-        message: '',
-      });
-      
       // Reset form state after showing success message
       setTimeout(() => {
         setFormState('idle');
       }, 3000);
-    }, 1500);
+    }, 500); // Short delay to allow mailto link to potentially open
   };
 
   // Animation variants
@@ -141,10 +148,10 @@ const Contact = () => {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-shadow-sm">
-              Let&apos;s Draft Your Blueprint
+              Let&apos;s Build Your Vision
             </h2>
             <p className="text-foreground/80 max-w-2xl mx-auto text-lg">
-              Ready to transform your architectural vision into reality? Connect with our expert architects and engineers to begin crafting your next landmark structure.
+              Ready to transform your construction vision into reality? Connect with our expert team to begin your next project.
             </p>
           </motion.div>
 
@@ -153,7 +160,7 @@ const Contact = () => {
               <div className="bg-background/70 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-primary/10 h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 -mt-10 -mr-10 bg-primary/5 rounded-full"></div>
                 
-                <h3 className="text-xl font-semibold mb-6 text-shadow-sm">Architectural Studio</h3>
+                <h3 className="text-xl font-semibold mb-6 text-shadow-sm">Silverpack Group</h3>
                 
                 <div className="space-y-6 relative z-10">
                   <div className="flex items-start">
@@ -164,10 +171,42 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium">Design Studio</h4>
+                      <h4 className="font-medium">Headquarters</h4>
                       <p className="text-foreground/70 text-sm mt-1">
-                        1234 Architect Avenue<br />
-                        New York, NY 10001
+                        Zarafa suites, 1st floor<br />
+                        Kilimani, Nairobi
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Factory</h4>
+                      <p className="text-foreground/70 text-sm mt-1">
+                        Street 24<br />
+                        Landmawe, Nairobi
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Garage</h4>
+                      <p className="text-foreground/70 text-sm mt-1">
+                        Gadano garage 2, Road A<br />
+                        Industrial Area, Nairobi
                       </p>
                     </div>
                   </div>
@@ -179,50 +218,41 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium">Project Inquiry</h4>
-                      <p className="text-foreground/70 text-sm mt-1">
-                        (555) 123-4567
-                      </p>
+                      <h4 className="font-medium">Phone</h4>
+                      <div className="text-foreground/70 text-sm mt-1 space-y-1">
+                        <p><a href="https://wa.me/254745052001" target="_blank" rel="noopener noreferrer" className="hover:text-primary">+254 745 052 001</a> (WhatsApp)</p>
+                        <p><a href="tel:+254707017782" className="hover:text-primary">+254 707 017 782</a></p>
+                        <p><a href="tel:+254712126452" className="hover:text-primary">+254 712 126 452</a></p>
+                        <p><a href="tel:+254741260206" className="hover:text-primary">+254 741 260 206</a></p>
+                      </div>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="bg-primary/10 p-3 rounded-full text-primary mr-4">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium">Design Consultations</h4>
+                      <h4 className="font-medium">Email</h4>
                       <p className="text-foreground/70 text-sm mt-1">
-                        architects@constructco.com
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full text-primary mr-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path>
-                        <path d="M8 12a2.5 2.5 0 0 1 4 0 2.5 2.5 0 0 0 4 0"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Studio Hours</h4>
-                      <p className="text-foreground/70 text-sm mt-1">
-                        Monday - Friday: 9AM - 5PM<br />
-                        Saturday: 10AM - 2PM
+                        <a href="mailto:Silverpackgroupltd@gmail.com" className="hover:text-primary">
+                          Silverpackgroupltd@gmail.com
+                        </a>
                       </p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-8 relative z-10">
-                  <h4 className="text-sm font-medium mb-4">Connect With Our Architects</h4>
+                  <h4 className="text-sm font-medium mb-4">Connect With Us</h4>
                   <div className="flex space-x-4">
                     <motion.a 
-                      href="#" 
+                      href="https://www.facebook.com/profile.php?id=61556957348741" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
                       whileHover={{ y: -5, scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -232,17 +262,9 @@ const Contact = () => {
                       </svg>
                     </motion.a>
                     <motion.a 
-                      href="#" 
-                      className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                      </svg>
-                    </motion.a>
-                    <motion.a 
-                      href="#" 
+                      href="https://www.instagram.com/silverpack_group/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
                       whileHover={{ y: -5, scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -254,15 +276,52 @@ const Contact = () => {
                       </svg>
                     </motion.a>
                     <motion.a 
-                      href="#" 
+                      href="https://wa.me/254745052001" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
                       whileHover={{ y: -5, scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 16.44c-1.44 0-2.85-.31-4.12-.91L5 18.65l1.17-2.9c-.76-1.36-1.17-2.92-1.17-4.52 0-4.36 3.54-7.91 7.91-7.91s7.91 3.54 7.91 7.91-3.54 7.91-7.91 7.91zm0-12.62c-2.62 0-4.75 2.13-4.75 4.75s2.13 4.75 4.75 4.75 4.75-2.13 4.75-4.75-2.13-4.75-4.75-4.75zm3.24 6.29c-.12.43-.73.79-1.05.82-.29.03-.68.06-1.98-.45-1.71-.69-2.83-2.46-2.93-2.61-.1-.15-.87-1.17-.87-2.22s.54-1.56.74-1.77c.2-.21.43-.26.58-.26s.24-.03.35-.03.28-.06.43.28c.15.34.51 1.24.56 1.34s.07.18 0 .28c-.07.1-.15.18-.3.31-.15.12-.29.23-.4.34-.12.1-.2.18-.09.34.12.15.54.73 1.18 1.29.81.73 1.49 1.01 1.7 1.09.21.07.34.06.46-.04.15-.12.62-.73.79-.97.17-.24.33-.18.55-.1.2.09.97.84 1.12 1 .15.15.26.23.29.37z"/>
+                      </svg>
+                    </motion.a>
+                    <motion.a 
+                      href="https://www.youtube.com/@Silverpackgroup" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
+                      whileHover={{ y: -5, scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {/* YouTube Icon */}
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect width="4" height="12" x="2" y="9"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
+                        <path d="M21.58 7.19A2.49 2.49 0 0 0 19.82 5.4C18.24 5 12 5 12 5s-6.24 0-7.82.4A2.49 2.49 0 0 0 2.42 7.19C2 8.76 2 12 2 12s0 3.24.42 4.81a2.49 2.49 0 0 0 1.76 1.79c1.58.4 7.82.4 7.82.4s6.24 0 7.82-.4a2.49 2.49 0 0 0 1.76-1.79c.42-1.57.42-4.81.42-4.81s0-3.24-.42-4.81z"></path>
+                        <polygon points="10 15.54 15 12 10 8.46"></polygon>
+                      </svg>
+                    </motion.a>
+                    <motion.a 
+                      href="https://www.tiktok.com/@Silverpack_group" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
+                      whileHover={{ y: -5, scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {/* TikTok Icon (Inline SVG) */}
+                      <svg 
+                        width="20" 
+                        height="20" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
                       </svg>
                     </motion.a>
                   </div>
@@ -349,7 +408,7 @@ const Contact = () => {
                         htmlFor="projectType" 
                         className={`block text-sm font-medium mb-1 transition-colors ${activeField === 'projectType' ? 'text-primary' : 'text-foreground/80'}`}
                       >
-                        Architecture Project
+                        Construction Project
                       </label>
                       <select
                         id="projectType"
@@ -362,11 +421,12 @@ const Contact = () => {
                         required
                       >
                         <option value="" disabled>Select project type</option>
-                        <option value="residential">Residential Architecture</option>
-                        <option value="commercial">Commercial Development</option>
-                        <option value="institutional">Institutional Design</option>
-                        <option value="urban">Urban Planning</option>
-                        <option value="renovation">Architectural Renovation</option>
+                        <option value="residential">Residential Construction</option>
+                        <option value="commercial">Commercial Construction</option>
+                        <option value="interior">Interior Design</option>
+                        <option value="renovation">Renovations & Retrofits</option>
+                        <option value="mep">MEP Services</option>
+                        <option value="materials">Construction Materials</option>
                       </select>
                       <div className="absolute right-3 top-9 pointer-events-none text-foreground/60">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -391,7 +451,7 @@ const Contact = () => {
                       onFocus={() => handleFocus('message')}
                       onBlur={handleBlur}
                       className="w-full px-4 py-2 bg-background border border-primary/20 focus:border-primary/60 rounded-md focus:outline-none min-h-[120px] transition-colors"
-                      placeholder="Describe your architectural project and requirements"
+                      placeholder="Describe your construction project and requirements"
                       required
                     />
                   </div>
@@ -405,7 +465,7 @@ const Contact = () => {
                       disabled={formState === 'submitting'}
                     >
                       <span className="relative z-10">
-                        {formState === 'idle' && 'Schedule Design Consultation'}
+                        {formState === 'idle' && 'Request Consultation'}
                         {formState === 'submitting' && 'Sending...'}
                         {formState === 'success' && 'Message Sent!'}
                         {formState === 'error' && 'Error! Try Again'}
@@ -424,11 +484,59 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                       >
-                        Thank you for contacting our architectural studio! We&apos;ll review your project details and get back to you shortly.
+                        Thank you for contacting Silverpack Group! We&apos;ll review your project details and get back to you shortly.
                       </motion.p>
                     )}
                   </div>
                 </form>
+              </div>
+              
+              {/* Document Downloads */}
+              <div className="mt-8 bg-background/70 backdrop-blur-sm rounded-xl p-6 border border-primary/10 shadow-lg">
+                <h3 className="text-lg font-semibold mb-4">Company Documents</h3>
+                <p className="text-foreground/80 text-sm mb-4">
+                  Download detailed information about our company, services, and projects:
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <a 
+                    href="/documents/silverpack-profile.pdf" 
+                    download
+                    className="flex items-center p-4 bg-primary/10 hover:bg-primary/15 border border-primary/20 rounded-lg transition-colors group"
+                  >
+                    <div className="mr-3 bg-primary/20 p-2 rounded-md text-primary group-hover:bg-primary/30 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-primary">Silverpack Profile</h4>
+                      <p className="text-xs text-foreground/70">Detailed information about Silverpack Group</p>
+                    </div>
+                  </a>
+                  
+                  <a 
+                    href="/documents/silverpack-group.pdf" 
+                    download
+                    className="flex items-center p-4 bg-primary/10 hover:bg-primary/15 border border-primary/20 rounded-lg transition-colors group"
+                  >
+                    <div className="mr-3 bg-primary/20 p-2 rounded-md text-primary group-hover:bg-primary/30 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-primary">Silverpack Group</h4>
+                      <p className="text-xs text-foreground/70">Services and capabilities overview</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

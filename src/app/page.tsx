@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import Hero from '@/components/layout/Hero';
 import MobileHero from '@/components/layout/MobileHero';
-import ArchitectureProcess from '@/components/layout/ArchitectureProcess';
+import ConstructionProcess from '@/components/layout/ConstructionProcess';
 import Services from '@/components/layout/Services';
-import Projects from '@/components/layout/Projects';
+import ClientsCarousel from '@/components/layout/ClientsCarousel';
 import About from '@/components/layout/About';
 import Contact from '@/components/layout/Contact';
 
@@ -31,9 +31,9 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {isMobile ? <MobileHero /> : <Hero />}
-      <ArchitectureProcess />
+      <ConstructionProcess />
       <Services />
-      <Projects />
+      <ClientsCarousel />
       <About />
       <Contact />
     </main>

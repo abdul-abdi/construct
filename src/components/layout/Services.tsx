@@ -10,95 +10,81 @@ import BlueprintElement from '../ui/blueprint-element';
 const services = [
   {
     id: 1,
-    title: "Architectural Design",
-    description: "We transform concepts into stunning architectural masterpieces that balance aesthetics, functionality, and sustainability with meticulous attention to detail.",
+    title: "Residential & Commercial Construction",
+    description: "Building quality homes and developing robust commercial spaces, from planning to execution.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-ruler">
-        <path d="M21.3 8.7 8.7 21.3c-1 1-2.5 1-3.4 0l-2.6-2.6c-1-1-1-2.5 0-3.4L15.3 2.7c1-1 2.5-1 3.4 0l2.6 2.6c1 1 1 2.5 0 3.4Z"/>
-        <path d="m7.5 10.5 2 2"/>
-        <path d="m10.5 7.5 2 2"/>
-        <path d="m13.5 4.5 2 2"/>
-        <path d="m16.5 1.5 2 2"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-building-2">
+        <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+        <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+        <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+        <path d="M10 6h4"/>
+        <path d="M10 10h4"/>
+        <path d="M10 14h4"/>
+        <path d="M10 18h4"/>
       </svg>
     ),
     features: [
-      "Conceptual Design Development",
-      "3D Visualization & Modeling",
-      "Sustainable Architecture",
-      "Detailed Construction Drawings"
+      "Residential Construction",
+      "Commercial Construction",
+      "Project Planning",
+      "Site Management"
     ],
     color: "primary"
   },
   {
     id: 2,
-    title: "Structural Engineering",
-    description: "Our engineering team ensures that every structure we design is not only aesthetically pleasing but also structurally sound and built to last for generations.",
+    title: "Interior Design & Renovations",
+    description: "Transforming spaces with functional and aesthetic interior design, including renovations and retrofits.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-building">
-        <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
-        <path d="M9 22v-4h6v4"/>
-        <path d="M8 6h.01"/>
-        <path d="M16 6h.01"/>
-        <path d="M12 6h.01"/>
-        <path d="M12 10h.01"/>
-        <path d="M12 14h.01"/>
-        <path d="M16 10h.01"/>
-        <path d="M16 14h.01"/>
-        <path d="M8 10h.01"/>
-        <path d="M8 14h.01"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-home">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
       </svg>
     ),
     features: [
-      "Structural Analysis",
-      "Load Calculations",
-      "Seismic Design",
-      "Foundation Systems"
+      "Space Planning & Layout",
+      "Furniture & Decor Selection",
+      "Renovations & Retrofitting",
+      "Custom Design Builds"
     ],
     color: "accent"
   },
   {
     id: 3,
-    title: "Construction Management",
-    description: "Expert oversight of construction projects from start to finish, ensuring quality standards, timeline adherence, and budget compliance throughout the building process.",
+    title: "MEP & Material Supply",
+    description: "Providing mechanical, electrical, plumbing solutions, and high-quality construction material supply.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-7H4a2 2 0 0 0-2 2v17Z"/>
-        <path d="M12 10V2"/>
-        <path d="m16 7-4 3-4-3"/>
-        <path d="M8 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-        <path d="M16 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-        <path d="M8 15h8"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings-2">
+        <path d="M20 7h-9"/>
+        <path d="M14 17H5"/>
+        <circle cx="17" cy="17" r="3"/>
+        <circle cx="7" cy="7" r="3"/>
       </svg>
     ),
     features: [
-      "Project Scheduling",
-      "Cost Management",
-      "Quality Control",
-      "Site Supervision"
+      "Mechanical Systems (HVAC)",
+      "Electrical Installations",
+      "Plumbing & Piping",
+      "Construction Material Supply"
     ],
     color: "foreground"
   },
   {
     id: 4,
-    title: "Urban Planning",
-    description: "We design comprehensive urban environments that promote sustainability, community interaction, and aesthetic harmony with the surrounding landscape.",
+    title: "Project Management & Consultancy",
+    description: "Expert project management and consultancy from inception to completion, ensuring quality and adherence to timelines.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-landmark">
-        <line x1="3" x2="21" y1="22" y2="22"/>
-        <line x1="6" x2="6" y1="18" y2="22"/>
-        <line x1="10" x2="10" y1="18" y2="22"/>
-        <line x1="14" x2="14" y1="18" y2="22"/>
-        <line x1="18" x2="18" y1="18" y2="22"/>
-        <polygon points="12 2 20 7 4 7"/>
-        <rect width="16" height="5" x="4" y="12" rx="2"/>
-        <line x1="12" x2="12" y1="7" y2="12"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard-check">
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+        <path d="m9 14 2 2 4-4"/>
       </svg>
     ),
     features: [
-      "Master Planning",
-      "Urban Design",
-      "Public Space Development",
-      "Sustainable Infrastructure"
+      "Project Planning & Coordination",
+      "Risk Management Strategies",
+      "Quality Control Assurance",
+      "Expert Consultancy"
     ],
     color: "primary"
   }
@@ -167,7 +153,7 @@ const Services = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary/90 tracking-[0.2em] bg-background/30 backdrop-blur-sm">
-              OUR EXPERTISE
+              OUR CAPABILITIES
             </div>
           </div>
           <motion.h2 
@@ -176,7 +162,7 @@ const Services = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
           >
-            Architectural Services
+            Our Core Services
           </motion.h2>
           <motion.p 
             className="text-foreground/80 max-w-2xl mx-auto text-lg"
@@ -184,7 +170,7 @@ const Services = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            From initial architectural concept to final construction, our comprehensive services bring your vision to life with precision and innovative design.
+            We offer a comprehensive range of construction and development services, tailored to meet the diverse needs of our clients with precision and excellence.
           </motion.p>
         </div>
 
@@ -204,7 +190,7 @@ const Services = () => {
                       {service.icon}
                     </div>
                     <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 text-primary/90 border-primary/20">
-                      {service.id === 1 ? "Design" : service.id === 2 ? "Engineering" : "Development"}
+                      {service.id === 1 ? "Construction" : service.id === 2 ? "Design" : service.id === 3 ? "Technical" : "Management"}
                     </Badge>
                   </div>
                   <CardTitle className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
@@ -270,9 +256,9 @@ const Services = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-shadow-sm">Need a Custom Architectural Solution?</h3>
+          <h3 className="text-2xl font-bold mb-4 text-shadow-sm">Need a Custom Construction Solution?</h3>
           <p className="text-foreground/80 max-w-2xl mx-auto mb-8">
-            Our team of architects and engineers can create customized solutions to meet your unique project requirements and design vision.
+            Our team of construction experts can create customized solutions to meet your unique project requirements and building vision.
           </p>
           <motion.button 
             className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition-colors duration-300 group"
@@ -283,7 +269,7 @@ const Services = () => {
               if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Request Architectural Consultation
+            Request Construction Consultation
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="20" 

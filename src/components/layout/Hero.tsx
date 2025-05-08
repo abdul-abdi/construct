@@ -4,11 +4,10 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 
 const heroContent = [
-  { headline: "Designing Landmarks, Building Futures.", subheading: "From vision to reality — expert construction, iconic architecture, and premium real estate solutions across Africa." },
-  { headline: "Your Partner in World-Class Development.", subheading: "We bring decades of experience in construction, architecture, and real estate to every project — ensuring quality, innovation, and integrity." },
-  { headline: "Creating Spaces That Define Excellence.", subheading: "Luxury living, bold architecture, and precision construction — tailored to elevate modern lifestyles and urban development." },
-  { headline: "Building Communities, Not Just Structures.", subheading: "We're redefining skylines while grounding every project in sustainability, culture, and purpose." },
-  { headline: "Smart Investments. Timeless Architecture.", subheading: "Whether you're buying, building, or designing — we offer holistic solutions for profitable and visionary development." }
+  { headline: "SILVERPACK GROUP: A Leader in Construction.", subheading: "Consistently demonstrating excellence in construction, urban development, and property management since 2019. Delivering high-quality, innovative solutions." },
+  { headline: "Committed to Precision and Sustainability.", subheading: "Our steadfast commitment to precision and sustainability has earned us a reputation for unparalleled expertise and dedication to every project." },
+  { headline: "Reliability and Excellence in Every Build.", subheading: "SPG's focus on client satisfaction, innovation, and sustainability ensures we remain at the forefront of the construction industry in Kenya and beyond." },
+  { headline: "Your Trusted Construction Partner.", subheading: "Silverpack Group: Building the future with high-quality, innovative solutions in construction and urban development since 2019." }
 ];
 
 const Hero = () => {
@@ -74,7 +73,7 @@ const Hero = () => {
   return (
     <motion.section
       ref={targetRef}
-      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-4 md:pt-12"
+      className="relative min-h-[100vh] flex items-start justify-center overflow-hidden pt-0 md:pt-6"
       style={{ opacity: mainOpacity, scale: mainScale, y: mainY }}
     >
       {/* Blueprint Background */}
@@ -199,7 +198,7 @@ const Hero = () => {
                 
                 {/* Blueprint title and information */}
                 <g fontFamily="Arial" fontSize="18" fill="rgba(var(--blueprint-line-color), 1)">
-                  <text x="150" y="150" fontWeight="bold">CONSTRUCT - HEADQUARTERS ELEVATION</text>
+                  <text x="150" y="150" fontWeight="bold">SILVERPACK GROUP - HEADQUARTERS ELEVATION</text>
                   <text x="150" y="180" fontSize="12" fill="rgba(var(--blueprint-line-color), 0.8)">SCALE: 1:200 | PROJECT #ARB-2023-142</text>
                 </g>
                 
@@ -260,7 +259,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Content Container */}
-        <div className="max-w-4xl mx-auto text-center z-20 relative mt-8 md:mt-16 mb-24 md:mb-40 animate-fade-in-up md:animate-none">
+        <div className="max-w-4xl mx-auto text-center z-20 relative mt-12 md:mt-20 mb-32 md:mb-48 animate-fade-in-up md:animate-none">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -268,7 +267,7 @@ const Hero = () => {
             className="mb-6 flex justify-center"
           >
             <span className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary tracking-[0.2em] mb-1 md:mb-4 bg-background/80 backdrop-blur-sm">
-              PRECISION IN ARCHITECTURE
+              EXCELLENCE IN CONSTRUCTION
             </span>
           </motion.div>
 
@@ -309,25 +308,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center sm:items-stretch gap-4 mt-6">
-              <a href="#projects" className="w-full sm:w-auto">
-                <motion.button
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm tracking-wider w-full sm:w-auto"
-                  whileHover={{ boxShadow: '0 0 15px rgba(28, 100, 242, 0.4)' }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.getElementById('projects');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  EXPLORE OUR PROJECTS
-                </motion.button>
-              </a>
               <a href="#process" className="w-full sm:w-auto">
                 <motion.button
-                  className="border-2 border-primary text-primary font-medium px-6 py-3 text-sm tracking-wider hover:bg-primary/20 hover:text-primary-foreground dark:hover:bg-primary/40 dark:hover:text-primary-foreground transition-colors duration-300 w-full sm:w-auto"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm tracking-wider w-full sm:w-auto"
                   whileHover={{ 
-                    boxShadow: '0 0 15px rgba(var(--blueprint-line-color), 0.4)',
+                    boxShadow: '0 0 15px rgba(28, 100, 242, 0.4)',
                     scale: 1.02 
                   }}
                   whileTap={{ scale: 0.98 }}
@@ -337,7 +322,7 @@ const Hero = () => {
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  OUR ARCHITECTURE PROCESS
+                  OUR CONSTRUCTION EXPERTISE
                 </motion.button>
               </a>
             </div>

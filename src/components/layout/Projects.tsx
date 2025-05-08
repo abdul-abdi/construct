@@ -26,104 +26,104 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Skyline Towers",
+    title: "Muthaiga Heights Residences",
     category: "Residential",
-    description: "A luxury residential complex featuring two towers connected by a sky bridge, with state-of-the-art amenities and sustainable design features that maximize natural light and energy efficiency.",
-    imagePath: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1170&auto=format&fit=crop",
-    completionYear: 2023,
-    location: "Seattle, WA",
-    size: "54,000 sq ft",
-    architect: "Jennifer Lewis",
+    description: "A luxury 14-floor residential development featuring 90 units of 3-bedroom apartments across 3 blocks, with high-end amenities.",
+    imagePath: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1035&auto=format&fit=crop",
+    completionYear: 2022,
+    location: "Muthaiga, Nairobi",
+    size: "90 units",
+    architect: "Silverpack Design Team",
     features: [
-      "LEED Platinum Certification",
-      "Rooftop Gardens",
-      "Smart Home Technology",
-      "Floor-to-ceiling Windows"
+      "State-of-art gymnasium and swimming pool",
+      "Recreational roof gardens",
+      "Children's playground",
+      "24-hour backup generator"
     ]
   },
   {
     id: 2,
-    title: "Harmony Business Park",
-    category: "Commercial",
-    description: "A modern office complex designed to foster collaboration and innovation in a green environment, featuring open workspaces and sustainable landscaping throughout the campus.",
-    imagePath: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop",
-    completionYear: 2022,
-    location: "Austin, TX",
-    size: "120,000 sq ft",
-    architect: "Michael Chen",
+    title: "Kitisuru View Apartments",
+    category: "Residential",
+    description: "An elegant residential development with 71 units designed for modern family living, featuring quality construction and attention to detail.",
+    imagePath: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1074&auto=format&fit=crop",
+    completionYear: 2021,
+    location: "Kitisuru, Nairobi",
+    size: "71 units",
+    architect: "Silverpack Design Team",
     features: [
-      "Flexible Co-working Spaces",
-      "Rainwater Collection System",
-      "Solar Panel Integration",
-      "Wellness Center"
+      "Modern family-friendly designs",
+      "Quality finishes throughout",
+      "Sustainable construction practices",
+      "Secure environment with controlled access"
     ]
   },
   {
     id: 3,
-    title: "Urban Oasis Condominiums",
-    category: "Residential",
-    description: "A mixed-use development with luxury condominiums, retail spaces, and integrated green areas designed to create a harmonious balance between urban living and natural elements.",
-    imagePath: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1035&auto=format&fit=crop",
-    completionYear: 2021,
-    location: "Chicago, IL",
+    title: "Nairobi Commercial Plaza",
+    category: "Commercial",
+    description: "A modern commercial development featuring office spaces and retail areas, with contemporary design and premium infrastructure.",
+    imagePath: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop",
+    completionYear: 2023,
+    location: "Upper Hill, Nairobi",
     size: "85,000 sq ft",
-    architect: "Sarah Johnson",
+    architect: "Silverpack Design Collaborative",
     features: [
-      "Green Roof System",
-      "Private Terraces",
-      "Energy-efficient Design",
-      "Community Gardens"
+      "Premium office spaces",
+      "Modern retail areas",
+      "Energy-efficient systems",
+      "Ample parking facilities"
     ]
   },
   {
     id: 4,
-    title: "Nexus Shopping Center",
+    title: "Industrial Area Development",
     category: "Commercial",
-    description: "A revolutionary shopping experience with cutting-edge architecture and immersive retail spaces, designed to enhance customer engagement and create memorable shopping journeys.",
+    description: "A purpose-built industrial complex designed for manufacturing and logistics operations, with practical layouts and durable construction.",
     imagePath: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1074&auto=format&fit=crop",
-    completionYear: 2023,
-    location: "Miami, FL",
+    completionYear: 2022,
+    location: "Industrial Area, Nairobi",
     size: "110,000 sq ft",
-    architect: "David Rodriguez",
+    architect: "Silverpack Group",
     features: [
-      "Interactive Digital Displays",
-      "Natural Ventilation System",
-      "Skylight Atriums",
-      "Acoustic Design"
+      "Reinforced structural framework",
+      "Purpose-built manufacturing spaces",
+      "Logistics-friendly layout",
+      "Heavy-duty utilities and infrastructure"
     ]
   },
   {
     id: 5,
-    title: "Serenity Gardens",
+    title: "Riverside Residential Complex",
     category: "Residential",
-    description: "An eco-friendly housing development with extensive green spaces and community amenities, designed to promote sustainable living and community connection in harmony with nature.",
-    imagePath: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1074&auto=format&fit=crop",
-    completionYear: 2022,
-    location: "Portland, OR",
-    size: "42,000 sq ft",
-    architect: "Jennifer Lewis",
+    description: "A modern residential development with a focus on comfortable living spaces, featuring quality construction and innovative design elements.",
+    imagePath: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1170&auto=format&fit=crop",
+    completionYear: 2023,
+    location: "Riverside, Nairobi",
+    size: "42 units",
+    architect: "Silverpack Design Team",
     features: [
-      "Passive House Standards",
-      "Community Pavilion",
-      "Native Landscaping",
-      "Geothermal Heating"
+      "Contemporary architectural design",
+      "Quality finishing materials",
+      "Family-oriented common areas",
+      "Energy-efficient building systems"
     ]
   },
   {
     id: 6,
-    title: "Innovation Hub",
-    category: "Institutional",
-    description: "A tech-focused research facility featuring smart building technology and flexible work spaces, designed to encourage cross-disciplinary collaboration and innovation.",
+    title: "Landmark Office Building",
+    category: "Commercial",
+    description: "A striking commercial building featuring modern office spaces designed for productivity, with state-of-the-art infrastructure and premium amenities.",
     imagePath: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=1073&auto=format&fit=crop",
     completionYear: 2021,
-    location: "Boston, MA",
+    location: "Westlands, Nairobi",
     size: "78,000 sq ft",
-    architect: "Michael Chen",
+    architect: "Silverpack Group",
     features: [
-      "Adaptive Reuse of Historic Building",
-      "Interactive Learning Spaces",
-      "Advanced Acoustics",
-      "Sustainable Materials"
+      "Contemporary architectural design",
+      "Flexible office layouts",
+      "Advanced building management systems",
+      "Premium finishing materials"
     ]
   }
 ];
@@ -219,16 +219,16 @@ const Projects = () => {
           >
             <div className="flex justify-center mb-4">
               <div className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary/90 tracking-[0.2em] bg-background/30 backdrop-blur-sm">
-                OUR PORTFOLIO
+                OUR CONSTRUCTION PORTFOLIO
               </div>
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-shadow-sm">
-              Architectural Projects
+              Featured Construction Projects
             </h2>
             
             <p className="text-foreground/80 max-w-2xl mx-auto text-lg">
-              Discover our architectural masterpieces that blend innovative design, sustainable practices, and structural excellence.
+              Explore a selection of our construction projects that showcase our commitment to quality, innovation, and client satisfaction across residential and commercial sectors.
             </p>
           </motion.div>
         </div>

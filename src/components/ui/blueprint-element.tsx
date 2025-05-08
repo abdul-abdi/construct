@@ -155,7 +155,7 @@ const BlueprintElement: React.FC<BlueprintElementProps> = ({
               APPROVED
             </text>
             <text x="30" y="55" fill="rgba(28, 100, 242, 0.8)" fontSize="6">
-              CONSTRUCT
+              SILVERPACK GROUP
             </text>
             <text x="36" y="65" fill="rgba(28, 100, 242, 0.8)" fontSize="4">
               REF: ARB-2023

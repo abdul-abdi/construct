@@ -7,71 +7,98 @@ import BlueprintElement from '../ui/blueprint-element';
 const processSteps = [
   {
     id: 1,
-    title: "Conceptual Design",
-    description: "We begin by transforming your vision into conceptual designs that capture the essence of your architectural aspirations, focusing on spatial relationships and aesthetic direction.",
+    title: "Residential Construction",
+    description: "Crafting high-quality homes with attention to detail, from luxurious family residences to multi-unit developments, delivering spaces that blend functionality with comfort.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="2 12 22 12 14 22 14 2"></polygon>
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
       </svg>
     ),
   },
   {
     id: 2,
-    title: "Schematic Development",
-    description: "Refining concepts into detailed schematics with precise measurements, structural considerations, and material selections that align with both vision and functionality.",
+    title: "Commercial Construction",
+    description: "Building optimized commercial spaces designed for business success, including office buildings, retail spaces, and industrial facilities with quality, efficiency, and innovation.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-        <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+        <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+        <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+        <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+        <path d="M10 6h4"/>
+        <path d="M10 10h4"/>
+        <path d="M10 14h4"/>
+        <path d="M10 18h4"/>
       </svg>
     ),
   },
   {
     id: 3,
-    title: "Technical Documentation",
-    description: "Creating comprehensive blueprints and technical specifications that meet building codes, engineering requirements, and provide clear guidance for construction teams.",
+    title: "Interior Design",
+    description: "Creating beautiful and functional interior spaces that reflect your unique style and needs, with attention to aesthetics, ergonomics, and innovative design solutions.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
-        <polyline points="10 9 9 9 8 9"></polyline>
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <path d="M9 22V12h6v10"></path>
+        <path d="M13 5v5h3"></path>
       </svg>
     ),
   },
   {
     id: 4,
-    title: "Construction Administration",
-    description: "Overseeing the building process to ensure faithful execution of architectural designs, addressing field conditions, and maintaining design integrity throughout construction.",
+    title: "Renovations and Retrofits",
+    description: "Transforming existing spaces through expert renovations and retrofitting services, enhancing functionality, aesthetics, and value of residential and commercial properties.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="6" width="20" height="8" rx="1"></rect>
-        <path d="M17 14v7"></path>
-        <path d="M7 14v7"></path>
-        <path d="M17 3v3"></path>
-        <path d="M7 3v3"></path>
-        <path d="M10 14 2.3 6.3"></path>
-        <path d="m14 6 7.7 7.7"></path>
-        <path d="m8 6 8 8"></path>
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="9" cy="9" r="2"/>
+        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
       </svg>
     ),
   },
   {
     id: 5,
-    title: "Post-Occupancy Evaluation",
-    description: "Assessing the completed structure in use to gather insights for future projects and ensure the building meets all functional, aesthetic, and sustainability goals.",
+    title: "Mechanical, Electrical, and Plumbing",
+    description: "Providing integrated MEP solutions that ensure optimal functionality, efficiency, and sustainability in both residential and commercial projects.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h20"></path>
-        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
-        <path d="m7 21 5-5 5 5"></path>
+        <path d="M8 6h10"></path>
+        <path d="M8 12h10"></path>
+        <path d="M8 18h10"></path>
+        <path d="M3 6h.01"></path>
+        <path d="M3 12h.01"></path>
+        <path d="M3 18h.01"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 6,
+    title: "Supply of Construction Materials",
+    description: "Sourcing and supplying high-quality construction materials to meet project specifications, ensuring durability, compliance with standards, and timely delivery.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 8h14"></path>
+        <path d="M5 12h14"></path>
+        <path d="M12 16h7"></path>
+        <path d="M9.1 16a5 5 0 1 0 0 .01"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 7,
+    title: "Project Management and Consultancy",
+    description: "Providing expert project management and consultancy services to ensure successful project delivery, from planning to execution, with focus on quality, timeliness, and budget management.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+        <path d="m9 14 2 2 4-4"/>
       </svg>
     ),
   }
 ];
 
-const ArchitectureProcess = () => {
+const ConstructionProcess = () => {
   return (
     <section
       id="process"
@@ -102,7 +129,7 @@ const ArchitectureProcess = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary/90 tracking-[0.2em] bg-background/70 backdrop-blur-sm">
-              ARCHITECTURAL METHODOLOGY
+              CONSTRUCTION EXPERTISE
             </div>
           </div>
           
@@ -113,7 +140,7 @@ const ArchitectureProcess = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Our Architecture Process
+            Our Areas of Expertise
           </motion.h2>
           
           <motion.p 
@@ -123,7 +150,7 @@ const ArchitectureProcess = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            From conceptual design to final construction, our comprehensive architectural process ensures excellence at every stage, transforming visions into precisely engineered structures.
+            From residential and commercial construction to specialized services, we offer comprehensive solutions to meet all your construction and development needs.
           </motion.p>
         </div>
 
@@ -145,7 +172,7 @@ const ArchitectureProcess = () => {
                 {/* Step number for mobile */}
                 <div className="flex items-center justify-center md:hidden mb-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                    {step.id}
+                    {step.id < 10 ? `0${step.id}` : step.id}
                   </div>
                 </div>
                 
@@ -171,7 +198,7 @@ const ArchitectureProcess = () => {
                 {/* Central circle connector */}
                 <div className="hidden md:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="w-16 h-16 rounded-full bg-background border-4 border-primary/30 flex items-center justify-center z-10">
-                    <span className="text-xl font-bold text-primary">{step.id}</span>
+                    <span className="text-xl font-bold text-primary">{step.id < 10 ? `0${step.id}` : step.id}</span>
                   </div>
                 </div>
               </motion.div>
@@ -187,9 +214,9 @@ const ArchitectureProcess = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4">Ready to Begin Your Project Journey?</h3>
+          <h3 className="text-2xl font-bold mb-4">Ready to Begin Your Project?</h3>
           <p className="text-foreground/80 max-w-2xl mx-auto mb-8">
-            Our team of architects and engineers is ready to guide your vision through each phase of our proven process, ensuring exceptional results.
+            Our team of construction experts is ready to guide your project through each phase, ensuring exceptional results delivered on time and within budget.
           </p>
           <motion.a 
             href="#contact"
@@ -202,7 +229,7 @@ const ArchitectureProcess = () => {
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Schedule a Consultation
+            Get a Quote
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="20" 
@@ -225,4 +252,4 @@ const ArchitectureProcess = () => {
   );
 };
 
-export default ArchitectureProcess; 
+export default ConstructionProcess; 

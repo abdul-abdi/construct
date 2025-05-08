@@ -38,16 +38,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "ConstructCo | Premium Architectural & Construction Services",
-  description: "ConstructCo is your trusted partner for innovative architectural design, construction, and building solutions.",
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL('https://www.silverpackgroup.com'),
+  title: "Silverpack Group | Premium Construction & Development Services",
+  description: "Silverpack Group is your trusted partner for innovative construction, urban development, and property management.",
+  keywords: ["architecture", "construction", "building", "design", "modern homes", "sustainable design", "urban planning", "kenya construction", "nairobi construction"],
   openGraph: {
-    title: "ConstructCo | Premium Architectural & Construction Services",
-    description: "ConstructCo is your trusted partner for innovative architectural design, construction, and building solutions.",
-    url: "http://localhost:3000",
-    siteName: "ConstructCo",
-    locale: "en_US",
-    type: "website",
+    title: "Silverpack Group | Premium Construction & Development Services",
+    description: "Silverpack Group is your trusted partner for innovative construction, urban development, and property management.",
+    url: "https://www.silverpackgroup.com",
+    siteName: "Silverpack Group",
+    images: [
+    ],
   },
 };
 
@@ -57,9 +58,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="robots" content="index, follow" />
@@ -67,7 +68,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}
       >
-        <ThemeProvider defaultTheme="dark" storageKey="construct-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="silverpack-theme">
           <BlueprintAnimations />
           <Header />
           <main className="flex-grow">{children}</main>

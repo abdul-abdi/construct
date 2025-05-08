@@ -2,19 +2,19 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import BlueprintElement from '../ui/blueprint-element';
+import Image from 'next/image';
 
 // Team member type
 interface TeamMember {
   id: number;
   name: string;
   role: string;
-  image: string;
-  bio: string;
+  count?: number;
+  icon: React.ReactNode;
 }
 
-// Company stats type
+// Company stat type
 interface CompanyStat {
   id: number;
   value: string;
@@ -22,35 +22,65 @@ interface CompanyStat {
   icon: React.ReactNode;
 }
 
-// Sample team data
+// Construction team data
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Jennifer Lewis",
-    role: "Principal Architect",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop",
-    bio: "Jennifer brings over 20 years of experience in architectural design and construction management. Her innovative designs have won multiple industry awards."
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Structural Engineering Director",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=987&auto=format&fit=crop",
-    bio: "With expertise in large-scale structural projects, Michael ensures our designs meet the highest engineering standards while pushing creative boundaries."
+    name: "Abdishakur Shariff",
+    role: "Office Administrator",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20">
+        <path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+        <path d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+        <path d="M12 12h4"></path>
+        <path d="M12 16h4"></path>
+        <path d="M8 12h.01"></path>
+        <path d="M8 16h.01"></path>
+      </svg>
+    )
   },
   {
     id: 3,
-    name: "Sarah Johnson",
-    role: "Sustainable Design Lead",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1061&auto=format&fit=crop",
-    bio: "Sarah's passion for sustainable architecture creates environmentally responsible buildings that reduce carbon footprints while maintaining aesthetic excellence."
+    name: "Abdullahi Somane",
+    role: "Procurement Officer",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        <path d="M6 11h4"></path>
+        <path d="M6 15h4"></path>
+        <path d="M14 15h4"></path>
+        <path d="M14 11h4"></path>
+      </svg>
+    )
   },
   {
     id: 4,
-    name: "David Rodriguez",
-    role: "Project Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop",
-    bio: "David's meticulous attention to blueprint details and client-focused approach ensures every architectural project is executed with precision."
+    name: "Amir Githinji",
+    role: "Accountant",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20">
+        <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+        <path d="M8 7h8"></path>
+        <path d="M8 11h8"></path>
+        <path d="M8 15h4"></path>
+      </svg>
+    )
+  },
+  {
+    id: 2,
+    name: "Engineering Staff",
+    role: "Skilled Technicians",
+    count: 8,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20">
+        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-7H4a2 2 0 0 0-2 2v17Z"></path>
+        <path d="M12 10v7"></path>
+        <path d="m9 13 3-3 3 3"></path>
+        <path d="M14 2v6h6"></path>
+        <path d="M22 19H2"></path>
+      </svg>
+    )
   }
 ];
 
@@ -58,8 +88,8 @@ const teamMembers: TeamMember[] = [
 const companyStats: CompanyStat[] = [
   {
     id: 1,
-    value: "150+",
-    label: "Structures Designed",
+    value: "80+",
+    label: "Projects Completed",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-7H4a2 2 0 0 0-2 2z"></path>
@@ -69,8 +99,8 @@ const companyStats: CompanyStat[] = [
   },
   {
     id: 2,
-    value: "25+",
-    label: "Years Experience",
+    value: "Since 2019",
+    label: "Years of Excellence",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -80,25 +110,24 @@ const companyStats: CompanyStat[] = [
   },
   {
     id: 3,
-    value: "30+",
-    label: "Architectural Awards",
+    value: "Client Focused",
+    label: "Our Approach",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 15c6.627 0 12-1.343 12-3v2c0 1.657-5.373 3-12 3-6.627 0-12-1.343-12-3v-2c0 1.657 5.373 3 12 3Z"></path>
-        <path d="M12 18c6.627 0 12-1.343 12-3v2c0 1.657-5.373 3-12 3-6.627 0-12-1.343-12-3v-2c0 1.657 5.373 3 12 3Z"></path>
-        <path d="M12 21c6.627 0 12-1.343 12-3v2c0 1.657-5.373 3-12 3-6.627 0-12-1.343-12-3v-2c0 1.657 5.373 3 12 3Z"></path>
-        <path d="M12 3c6.627 0 12 1.343 12 3s-5.373 3-12 3-12-1.343-12-3 5.373-3 12-3Z"></path>
-        <path d="M12 3v18"></path>
+         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+         <circle cx="9" cy="7" r="4"></circle>
+         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
       </svg>
     )
   },
   {
     id: 4,
-    value: "98%",
-    label: "Client Satisfaction",
+    value: "Quality & Innovation",
+    label: "Our Commitment",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+        <path d="M12 21L8 17l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12l-4-4-4 4Z"></path>
       </svg>
     )
   }
@@ -121,7 +150,7 @@ const About = () => {
       ref={sectionRef}
     >
       {/* Blueprint background elements */}
-      <div className="absolute inset-0 building-blueprint opacity-5"></div>
+      <div className="absolute inset-0 building-blueprint opacity-10"></div>
       
       {/* Blueprint decorative elements */}
       <BlueprintElement 
@@ -147,7 +176,7 @@ const About = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div className="inline-block py-1 px-4 border-t border-b border-primary/50 text-sm md:text-base text-primary/90 tracking-[0.2em] bg-background/30 backdrop-blur-sm">
-              OUR ARCHITECTURAL LEGACY
+              WHO WE ARE
             </div>
           </div>
           
@@ -158,7 +187,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            The Architects Behind ConstructCo
+            About Silverpack Group
           </motion.h2>
           <motion.p 
             className="text-foreground/80 max-w-2xl mx-auto text-lg"
@@ -167,28 +196,49 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            We&apos;ve combined visionary architectural design with precision engineering to create structures that stand as monuments to both form and function.
+            Excellence in construction, urban development, and property management since 2019.
           </motion.p>
         </div>
 
         {/* Company story */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative h-[400px] rounded-xl overflow-hidden shadow-lg"
+            className="flex items-center justify-center"
           >
-            <div className="absolute inset-0 border-4 border-primary/20 z-10 pointer-events-none"></div>
-            <Image
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1170&auto=format&fit=crop"
-              alt="ConstructCo Architectural Project"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+            <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden">
+              <div className="absolute inset-0 border-2 border-primary/30 bg-primary/5 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 backdrop-blur-[1px]"></div>
+                
+                {/* Blueprint grid */}
+                <svg className="absolute inset-0 w-full h-full opacity-30">
+                  <defs>
+                    <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+                      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(var(--blueprint-line-color), 0.3)" strokeWidth="0.5" />
+                    </pattern>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <rect width="40" height="40" fill="url(#smallGrid)" />
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(var(--blueprint-line-color), 0.5)" strokeWidth="1" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+              </div>
+              
+              {/* Construction building element */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Image
+                  src="/silverpack.png"
+                  alt="Silverpack Group Logo"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  className="w-3/4 h-auto"
+                />
+              </div>
+            </div>
           </motion.div>
           
           <motion.div
@@ -199,7 +249,7 @@ const About = () => {
             className="flex flex-col justify-center"
           >
             <h3 className="text-2xl font-bold mb-4 text-shadow-sm relative inline-flex">
-              Our Architectural Philosophy
+              Our Story & Commitment
               <motion.span 
                 className="absolute -bottom-1 left-0 h-[1px] bg-primary/80"
                 initial={{ width: 0 }}
@@ -209,31 +259,41 @@ const About = () => {
               />
             </h3>
             <p className="text-foreground/80 mb-6">
-              ConstructCo began with a singular vision: to create architectural masterpieces that transform skylines and redefine spaces. What started as a small studio has evolved into a leading architectural firm recognized for innovative design, structural integrity, and sustainable building practices.
+              Silverpack Group has consistently demonstrated excellence in the fields of construction, urban development, and property management since 2019, establishing itself as a leader in delivering high-quality, innovative solutions. With a steadfast commitment to precision and sustainability, the company has earned a reputation for its unparalleled expertise and dedication to every project.
             </p>
             <p className="text-foreground/80 mb-6">
-              Our approach to architecture transcends mere building design – we craft experiences through thoughtful spatial planning, cutting-edge materials, and meticulous attention to every blueprint detail. From initial concept sketches to final construction, we maintain a relentless pursuit of architectural excellence.
+              SPG has earned a reputation for reliability and excellence. Our commitment to client satisfaction, coupled with our focus on innovation and sustainability, ensures that we remain at the forefront of the construction industry in Kenya and beyond.
             </p>
-            <div>
+            <div className="flex space-x-4">
               <motion.div 
-                className="inline-flex items-center text-primary font-medium cursor-pointer relative group"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-primary/10 px-4 py-2 rounded-md text-primary flex items-center"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.7 }}
               >
-                Explore our architectural approach
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
-                <motion.span 
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-primary/80 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
-                />
+                Trusted Quality
+              </motion.div>
+              <motion.div 
+                className="bg-primary/10 px-4 py-2 rounded-md text-primary flex items-center"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Reliable Service
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Company Stats */}
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
           initial={{ opacity: 0, y: 50 }}
@@ -271,7 +331,7 @@ const About = () => {
         <div className="mb-10">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-shadow-sm relative inline-flex">
-              Our Architectural Team
+              Our Construction Team
               <motion.span 
                 className="absolute -bottom-1 left-0 h-[1px] bg-primary/80"
                 initial={{ width: 0 }}
@@ -281,7 +341,7 @@ const About = () => {
               />
             </h3>
             <p className="text-foreground/80 max-w-2xl mx-auto">
-              Meet the visionaries behind our architectural designs – a diverse team of architects, engineers, and designers committed to creating exceptional built environments.
+              Meet the experienced professionals who make our construction projects successful — a skilled team dedicated to delivering exceptional quality and service.
             </p>
           </div>
           
@@ -293,44 +353,30 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-background/70 backdrop-blur-sm border border-primary/10 rounded-xl overflow-hidden shadow-lg group"
+                className="bg-background/70 backdrop-blur-sm border border-primary/10 rounded-xl p-8 shadow-lg group flex flex-col items-center text-center relative overflow-hidden"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-70"></div>
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10 text-primary/80 mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:text-primary">
+                  {member.icon}
                 </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold mb-1 text-shadow-sm">{member.name}</h4>
-                  <p className="text-primary/80 text-sm mb-3">{member.role}</p>
-                  <p className="text-foreground/70 text-sm">{member.bio}</p>
-                  <div className="flex space-x-3 mt-4">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                      </svg>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                      </svg>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    </div>
+                
+                <h4 className="text-xl font-bold mb-2 text-shadow-sm relative z-10">{member.name}</h4>
+                <p className="text-primary/80 mb-3 relative z-10">{member.role}</p>
+                
+                {member.count && (
+                  <div className="bg-primary/10 px-3 py-1 rounded-full text-primary text-sm relative z-10">
+                    Total Staff: {member.count}
                   </div>
-                </div>
+                )}
+                
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-primary/30"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+                />
               </motion.div>
             ))}
           </div>
