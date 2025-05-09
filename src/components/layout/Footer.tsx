@@ -52,9 +52,9 @@ const Footer: React.FC = () => {
       title: 'Contact',
       links: [
         { label: 'Silverpackgroupltd@gmail.com', href: 'mailto:Silverpackgroupltd@gmail.com' },
-        { label: '+254745052001 / +254707017782', href: 'tel:+254745052001' },
         { label: 'Kilimani, Nairobi', href: '#contact', action: () => handleScrollTo('contact') },
         { label: 'Industrial Area, Nairobi', href: '#contact', action: () => handleScrollTo('contact') },
+        { label: '+254745052001 / +254707017782', href: 'tel:+254745052001' },
       ],
     },
     {
@@ -106,31 +106,6 @@ const Footer: React.FC = () => {
               <p className="text-foreground/70 mb-4 max-w-md">
                 Building excellence through quality construction, innovative solutions, and reliable project delivery for residential and commercial properties.
               </p>
-              <div className="flex space-x-4">
-                {/* Social links with updated account names */}
-                {[
-                  { name: 'facebook', label: 'Silverpack group', icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>, href: "https://www.facebook.com/profile.php?id=61556957348741" },
-                  { name: 'twitter', label: 'Silverpack_group', icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>, href: "https://twitter.com/Silverpack_group" },
-                  { name: 'instagram', label: 'Silverpack_group', icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>, href: "https://www.instagram.com/silverpack_group/" }
-                ].map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-background/80 p-2 rounded-full border border-primary/20 text-primary/80 hover:text-primary/100 hover:border-primary/50 transition-colors"
-                    whileHover={{ y: -5, scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 * index }}
-                    viewport={{ once: true }}
-                    title={social.label}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
             </motion.div>
           </div>
 

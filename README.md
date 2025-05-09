@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Silverpack Group Construction Website
+
+A modern, responsive construction company website built with Next.js, featuring architectural blueprint aesthetics, dynamic animations, and a sophisticated navy blue and silver color scheme.
+
+![Silverpack Group](public/silverpack.png)
+
+## Features
+
+- **Architectural Blueprint Design** - Unique blueprint-inspired UI elements throughout the site
+- **Light/Dark Mode** - Elegant theme switching with custom navy and silver color palettes
+- **Responsive Layout** - Mobile-first design that scales seamlessly to larger screens
+- **Motion Animations** - Smooth transitions and interactive elements powered by Framer Motion
+- **Modern UI Components** - Built with shadcn/ui component library for consistent styling
+- **Contact Form** - Integrated contact form for client inquiries
+
+## Tech Stack
+
+- **Framework**: Next.js 
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: shadcn/ui
+- **Typography**: Geist Sans + Mono, Playfair Display
+- **Deployment**: [Your deployment platform]
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 16.x or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/silverpack-construction.git
+cd silverpack-construction
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── public/            # Static assets
+│   ├── clients/       # Client logos
+│   ├── documents/     # Downloadable documents
+│   └── silverpack.png # Company logo
+├── src/
+│   ├── app/           # Next.js app directory
+│   │   ├── services/  # Service pages
+│   │   └── globals.css # Global styles
+│   ├── components/    # React components
+│   │   ├── layout/    # Layout components (Header, Footer, etc.)
+│   │   └── ui/        # UI components
+│   └── lib/           # Utility functions
+├── tailwind.config.js # Tailwind configuration
+└── components.json    # shadcn/ui configuration
+```
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
