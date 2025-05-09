@@ -107,11 +107,11 @@ const BlueprintElement: React.FC<BlueprintElementProps> = ({
             <rect x="45" y="50" width="10" height="15" strokeWidth="0.3" />
             <rect x="60" y="50" width="10" height="15" strokeWidth="0.3" />
             <rect x="45" y="65" width="10" height="15" strokeWidth="0.3" />
-            <text x="25" y="28" fill="rgba(28, 100, 242, 0.8)" fontSize="3">FRONT ELEVATION</text>
+            <text x="25" y="28" className="fill-primary/80" fontSize="3">FRONT ELEVATION</text>
             <line x1="15" y1="80" x2="85" y2="80" strokeWidth="0.3" />
             <line x1="15" y1="79" x2="15" y2="81" strokeWidth="0.3" />
             <line x1="85" y1="79" x2="85" y2="81" strokeWidth="0.3" />
-            <text x="45" y="84" fill="rgba(28, 100, 242, 0.8)" fontSize="2">20m</text>
+            <text x="45" y="84" className="fill-primary/80" fontSize="2">20m</text>
           </svg>
         )
       

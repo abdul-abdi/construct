@@ -10,11 +10,12 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          blue: '#0D47A1',        // Deep blue
-          'blue-light': '#E3F2FD', // Very light blue
-          silver: '#B0BEC5',      // Muted silver/grey
-          'silver-light': '#ECEFF1',// Very light silver/grey
-          'silver-dark': '#78909C', // Darker silver/grey
+          navy: '#0A3183',        // More vibrant navy blue
+          'navy-light': '#1E4DB7', // Brighter navy blue
+          'navy-dark': '#061C54', // Rich dark navy blue
+          silver: '#C0C5C9',      // Silver
+          'silver-light': '#E5E8EB',// Light silver
+          'silver-dark': '#8D9298', // Darker silver
         },
       },
       fontFamily: {

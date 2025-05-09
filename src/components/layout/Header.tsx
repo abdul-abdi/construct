@@ -200,7 +200,7 @@ const Header: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}
-            whileHover={{ boxShadow: '0 0 15px rgba(28, 100, 242, 0.4)' }}
+            whileHover={{ boxShadow: '0 0 15px rgba(10, 49, 131, 0.6)' }}
             whileTap={{ scale: 0.98 }}
             onClick={(e) => handleNavigation(e, { href: "#contact", label: "Contact" })}
           >

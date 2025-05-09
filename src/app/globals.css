@@ -52,69 +52,69 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.57 0.131 245.27);
+  --primary: oklch(0.25 0.15 260);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.92 0.04 258);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --muted: oklch(0.95 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.65 0.15 240.24);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.32 0.13 260);
+  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 245.116);
-  --chart-2: oklch(0.6 0.118 230.704);
-  --chart-3: oklch(0.5 0.15 240.392);
-  --chart-4: oklch(0.7 0.18 250.429);
-  --chart-5: oklch(0.4 0.13 235.08);
+  --border: oklch(0.75 0.05 258);
+  --input: oklch(0.75 0.05 258);
+  --ring: oklch(0.25 0.15 260);
+  --chart-1: oklch(0.25 0.15 260);
+  --chart-2: oklch(0.35 0.12 260);
+  --chart-3: oklch(0.42 0.10 260);
+  --chart-4: oklch(0.52 0.08 260);
+  --chart-5: oklch(0.60 0.06 258);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.25 0.15 260);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.95 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-border: oklch(0.75 0.05 258);
   --sidebar-ring: oklch(0.708 0 0);
   --blueprint-bg-color: 240, 248, 255;
-  --blueprint-line-color: 0, 70, 190;
+  --blueprint-line-color: 10, 36, 99;
 }
 
 .dark {
-  --background: oklch(0.1 0.02 245);
+  --background: oklch(0.10 0.04 260);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.15 0.02 245);
+  --card: oklch(0.14 0.05 260);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.15 0.02 245);
+  --popover: oklch(0.14 0.05 260);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.2 240.27);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.2 0.02 245);
+  --primary: oklch(0.68 0.12 248);
+  --primary-foreground: oklch(0.10 0.04 260);
+  --secondary: oklch(0.18 0.06 260);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.2 0.02 245);
+  --muted: oklch(0.20 0.05 260);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.45 0.15 235.24);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.50 0.10 248);
+  --accent-foreground: oklch(0.10 0.04 260);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 15%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.6 0.2 240.376);
-  --chart-2: oklch(0.7 0.17 235.48);
-  --chart-3: oklch(0.5 0.15 245.08);
-  --chart-4: oklch(0.65 0.22 230.9);
-  --chart-5: oklch(0.55 0.18 255.439);
-  --sidebar: oklch(0.145 0 0);
+  --border: oklch(0.5 0.08 248 / 30%);
+  --input: oklch(0.5 0.08 248 / 30%);
+  --ring: oklch(0.60 0.10 248);
+  --chart-1: oklch(0.68 0.12 248);
+  --chart-2: oklch(0.58 0.11 248);
+  --chart-3: oklch(0.72 0.10 248);
+  --chart-4: oklch(0.62 0.09 248);
+  --chart-5: oklch(0.66 0.11 248);
+  --sidebar: oklch(0.10 0.06 260);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.6 0.2 240.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-primary: oklch(0.68 0.12 248);
+  --sidebar-primary-foreground: oklch(0.10 0.04 260);
+  --sidebar-accent: oklch(0.18 0.06 260);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-border: oklch(0.5 0.08 248 / 25%);
+  --sidebar-ring: oklch(0.65 0.10 248);
   --blueprint-bg-color: 10, 25, 45;
-  --blueprint-line-color: 28, 100, 242;
+  --blueprint-line-color: 192, 197, 201;
 }
 
 @layer base {
@@ -141,24 +141,24 @@
   /* Enhanced architectural blueprint grid with measurements */
   .blueprint-grid {
     background-image:
-      linear-gradient(to right, var(--primary)/15% 1px, transparent 1px),
-      linear-gradient(to bottom, var(--primary)/15% 1px, transparent 1px),
-      linear-gradient(to right, var(--primary)/10% 0.5px, transparent 0.5px),
-      linear-gradient(to bottom, var(--primary)/10% 0.5px, transparent 0.5px);
+      linear-gradient(to right, var(--primary)/25% 1px, transparent 1px),
+      linear-gradient(to bottom, var(--primary)/25% 1px, transparent 1px),
+      linear-gradient(to right, var(--primary)/15% 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, var(--primary)/15% 0.5px, transparent 0.5px);
     background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
     background-position: 0 0;
     background-repeat: repeat;
-    opacity: 0.2;
+    opacity: 0.3;
   }
   
   /* Building blueprint style */
   .building-blueprint {
     background-color: rgba(var(--blueprint-bg-color), 0.05);
     background-image: 
-      linear-gradient(to right, rgba(var(--blueprint-line-color), 0.15) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(var(--blueprint-line-color), 0.15) 1px, transparent 1px),
-      linear-gradient(to right, rgba(var(--blueprint-line-color), 0.08) 0.5px, transparent 0.5px),
-      linear-gradient(to bottom, rgba(var(--blueprint-line-color), 0.08) 0.5px, transparent 0.5px);
+      linear-gradient(to right, rgba(var(--blueprint-line-color), 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--blueprint-line-color), 0.2) 1px, transparent 1px),
+      linear-gradient(to right, rgba(var(--blueprint-line-color), 0.1) 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, rgba(var(--blueprint-line-color), 0.1) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
     background-position: 0 0;
     background-repeat: repeat;
@@ -216,6 +216,30 @@
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .text-navy {
+    color: var(--primary);
+  }
+  
+  .bg-navy {
+    background-color: var(--primary);
+  }
+  
+  .border-navy {
+    border-color: var(--primary);
+  }
+  
+  .text-silver {
+    color: var(--secondary);
+  }
+  
+  .bg-silver {
+    background-color: var(--secondary);
+  }
+  
+  .border-silver {
+    border-color: var(--secondary);
   }
 }
 

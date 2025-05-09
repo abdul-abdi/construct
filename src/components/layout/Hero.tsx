@@ -312,7 +312,7 @@ const Hero = () => {
                 <motion.button
                   className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm tracking-wider w-full sm:w-auto"
                   whileHover={{ 
-                    boxShadow: '0 0 15px rgba(28, 100, 242, 0.4)',
+                    boxShadow: '0 0 15px rgba(10, 49, 131, 0.6)',
                     scale: 1.02 
                   }}
                   whileTap={{ scale: 0.98 }}
