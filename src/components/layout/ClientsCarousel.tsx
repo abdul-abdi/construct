@@ -248,7 +248,7 @@ const ClientsCarousel = () => {
 
       {/* Testimonial section with auto-rotation */}
       <div className="container mx-auto px-4 mt-24">
-        <div className="h-[340px] md:h-[300px] relative">
+        <div className="min-h-[380px] md:h-[300px] relative">
           <AnimatePresence mode="wait">
             {testimonials.map((testimonial, index) => (
               index === currentTestimonial && (
@@ -265,10 +265,10 @@ const ClientsCarousel = () => {
                   onHoverStart={() => setIsHoveringTestimonial(true)}
                   onHoverEnd={() => setIsHoveringTestimonial(false)}
                 >
-                  <div className="flex flex-col h-full justify-between p-8 md:p-10">
+                  <div className="flex flex-col h-full justify-between p-6 sm:p-8 md:p-10">
                     <div className="flex justify-center">
                       <svg 
-                        className="text-primary w-16 h-16 mb-4" 
+                        className="text-primary w-12 h-12 sm:w-16 sm:h-16 mb-4" 
                         viewBox="0 0 48 48" 
                         fill="currentColor"
                       >
@@ -276,16 +276,16 @@ const ClientsCarousel = () => {
                       </svg>
                     </div>
                     
-                    <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light italic max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light italic max-w-2xl mx-auto">
                       {testimonial.text}
                     </p>
                     
                     <div className="flex items-center justify-center mt-6">
-                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-medium mr-4">
+                      <div className="w-12 h-12 text-lg sm:w-14 sm:h-14 sm:text-xl rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium mr-4">
                         {testimonial.initial}
                       </div>
                       <div className="text-left">
-                        <p className="font-medium text-lg">{testimonial.author}</p>
+                        <p className="font-medium text-base sm:text-lg">{testimonial.author}</p>
                         <p className="text-sm text-foreground/70">{testimonial.role}</p>
                       </div>
                     </div>
