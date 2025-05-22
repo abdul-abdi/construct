@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import { Analytics } from "@vercel/analytics/next"
 import Footer from "@/components/layout/Footer";
 import BlueprintAnimations from "@/components/layout/BlueprintAnimations";
 import { ThemeProvider } from "@/lib/theme-provider";
@@ -114,6 +115,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
